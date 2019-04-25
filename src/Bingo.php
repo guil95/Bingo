@@ -22,6 +22,11 @@ class Bingo{
             return $this->cardArray;
         }
 
+        if ($type === 'json') {
+            $this->setCardArray();
+            return json_encode(['data' => $this->cardArray]);
+        }
+
         $this->setCardDraw();
         return $this->cardDraw;
     }
