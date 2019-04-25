@@ -8,6 +8,15 @@ class Bingo{
     private $cardArray = [];
     private $cardDraw = '|  B |  I |  N |  G |  O |'.PHP_EOL;
 
+    public function __construct()
+    {
+        $this->bingo[0] = [];
+        $this->bingo[1] = [];
+        $this->bingo[2] = [];
+        $this->bingo[3] = [];
+        $this->bingo[4] = [];
+    }
+
     /**
      * @param string $type
      * @return array|string
@@ -51,49 +60,48 @@ class Bingo{
 
         if ($number >= 1 && $number <= 15) {
             $this->setValue(
-                $this->bingo[0],
+                0,
                 $number
             );
         }
 
         if ($number > 15 && $number <= 30) {
             $this->setValue(
-                $this->bingo[1],
+                1,
                 $number
             );
         }
 
         if ($number > 30 && $number <= 45) {
             $this->setValue(
-                $this->bingo[2],
+                2,
                 $number
             );
         }
 
         if ($number > 45 && $number <= 60) {
             $this->setValue(
-                $this->bingo[3],
+                3,
                 $number
             );
         }
 
         if ($number > 60 && $number <= 75) {
             $this->setValue(
-                $this->bingo[4],
+                4,
                 $number
             );
         }
     }
 
     /**
-     * @param array|null $value
+     * @param int $index
      * @param string $number
      */
-    private function setValue(?array &$value, string $number)
+    private function setValue(int $index, string $number)
     {
-        $value = (array) $value;
-        if (count($value) < 5) {
-            $value[] = $number;
+        if (count($this->bingo[$index]) < 5) {
+            $this->bingo[$index][] = $number;
         }
     }
 
