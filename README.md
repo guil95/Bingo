@@ -1,7 +1,5 @@
 # Bingo
 
 # Use
-For Array type
-`make run type=array`
-For card type
-`make run`
+Array type: `make run type=array`
+Card type: `make run`
