@@ -17,7 +17,7 @@ class Bingo{
         $this->randNumber();
         $this->sortLetters();
 
-        if($type === 'array'){
+        if ($type === 'array') {
             $this->setCardArray();
             return $this->cardArray;
         }
@@ -37,42 +37,42 @@ class Bingo{
      */
     private function setNumber(int $number)
     {
-        if(in_array($number, $this->numbers)){
+        if (in_array($number, $this->numbers)) {
             $this->randNumber();
         }
 
         $number = str_pad($number, 2, "0", STR_PAD_LEFT);
         $this->numbers[] = $number;
 
-        if($number >= 1 && $number <= 15){
+        if ($number >= 1 && $number <= 15) {
             $this->setValue(
                 $this->bingo[0],
                 $number
             );
         }
 
-        if($number > 15 && $number <= 30){
+        if ($number > 15 && $number <= 30) {
             $this->setValue(
                 $this->bingo[1],
                 $number
             );
         }
 
-        if($number > 30 && $number <= 45){
+        if ($number > 30 && $number <= 45) {
             $this->setValue(
                 $this->bingo[2],
                 $number
             );
         }
 
-        if($number > 45 && $number <= 60){
+        if ($number > 45 && $number <= 60) {
             $this->setValue(
                 $this->bingo[3],
                 $number
             );
         }
 
-        if($number > 60 && $number <= 75){
+        if ($number > 60 && $number <= 75) {
             $this->setValue(
                 $this->bingo[4],
                 $number
@@ -87,7 +87,7 @@ class Bingo{
     private function setValue(?array &$value, string $number)
     {
         $value = (array) $value;
-        if (count($value) < 5){
+        if (count($value) < 5) {
             $value[] = $number;
         }
     }
@@ -95,13 +95,13 @@ class Bingo{
     private function verifyNumbers()
     {
         $complete = true;
-        foreach ($this->bingo as $key => $value){
-            if(count($this->bingo[$key]) < 5 ){
+        foreach ($this->bingo as $key => $value) {
+            if (count($this->bingo[$key]) < 5 ) {
                 $complete = false;
             }
         }
 
-        if(!$complete){
+        if (!$complete) {
             $this->randNumber();
         }
     }
