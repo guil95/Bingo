@@ -1,0 +1,18 @@
+{
+    "name": "guil95/bingo",
+    "description": "Bingo",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guilherme Rodrigues",
+            "email": "guilhermerodriguestb@gmail.com"
+        }
+    ],
+    "require": {}
+}
