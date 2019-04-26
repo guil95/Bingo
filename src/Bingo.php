@@ -10,11 +10,9 @@ class Bingo{
 
     public function __construct()
     {
-        $this->bingo[0] = [];
-        $this->bingo[1] = [];
-        $this->bingo[2] = [];
-        $this->bingo[3] = [];
-        $this->bingo[4] = [];
+        for($i = 0; $i < 5; $i++){
+            $this->bingo[$i] = [];
+        }
     }
 
     /**
